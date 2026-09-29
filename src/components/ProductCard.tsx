@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { Airflow } from './Airflow'
-import { featureIcons, IconAmazon, IconArrow, type FeatureIconName } from './Icons'
+import { featureIcons, IconAmazon, IconArrow, IconFlipkart, type FeatureIconName } from './Icons'
+import { site } from '../data/site'
 import type { Product } from '../data/products'
 
 type ProductCardProps = {
@@ -13,7 +13,6 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="product-media">
         {product.badge ? <span className="product-badge">{product.badge}</span> : null}
         <img src={product.image} alt={product.name} />
-        <Airflow variant="card" />
       </div>
       <h3>{product.name}</h3>
       <p className="tagline">{product.tagline}</p>
@@ -34,6 +33,9 @@ export function ProductCard({ product }: ProductCardProps) {
         </NavLink>
         <a className="btn btn--outline-dark" href={product.amazonUrl} target="_blank" rel="noreferrer">
           <IconAmazon size={16} /> Buy on Amazon
+        </a>
+        <a className="btn btn--flipkart" href={site.flipkartUrl} target="_blank" rel="noreferrer">
+          <IconFlipkart size={16} /> Buy on Flipkart
         </a>
       </div>
     </article>

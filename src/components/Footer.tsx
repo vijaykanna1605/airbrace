@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import { site, whatsappUrl } from '../data/site'
-import { IconFacebook, IconInstagram, IconWhatsApp, IconYoutube } from './Icons'
+import { stores } from '../data/stores'
+import { IconAmazon, IconFlipkart, IconInstagram, IconWhatsApp } from './Icons'
 import { Logo } from './Logo'
 
 export function Footer() {
+  const store = stores[0]
+
   return (
     <footer className="site-footer">
       <div className="container-wide footer-grid">
@@ -23,8 +26,7 @@ export function Footer() {
           <h3>Company</h3>
           <Link to="/about">About AIRBRACE</Link>
           <Link to="/why-airbrace">Why AIRBRACE</Link>
-          <Link to="/about">Manufacturing</Link>
-          <Link to="/about">Careers</Link>
+          <Link to="/manufacturing">Manufacturing</Link>
         </div>
         <div className="footer-col">
           <h3>Support</h3>
@@ -44,23 +46,33 @@ export function Footer() {
             <a href={site.social.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
               <IconInstagram />
             </a>
-            <a href={site.social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer">
-              <IconFacebook />
-            </a>
-            <a href={site.social.youtube} aria-label="YouTube" target="_blank" rel="noreferrer">
-              <IconYoutube />
-            </a>
             <a href={whatsappUrl()} aria-label="WhatsApp" target="_blank" rel="noreferrer">
               <IconWhatsApp />
             </a>
           </div>
         </div>
-        <div className="footer-col">
-          <h3>Where to Buy</h3>
-          <a href={site.amazonUrl} target="_blank" rel="noreferrer">
-            amazon
-          </a>
-          <Link to="/store-locator">Store Locator</Link>
+        <div className="footer-buy">
+          <div className="footer-col">
+            <h3>Where to Buy</h3>
+            <a href={site.amazonStore} target="_blank" rel="noreferrer">
+              <IconAmazon size={16} /> Amazon
+            </a>
+            <a href={site.flipkartUrl} target="_blank" rel="noreferrer">
+              <IconFlipkart size={16} /> Flipkart
+            </a>
+            <Link to="/store-locator">Store Locator</Link>
+          </div>
+          <div className="footer-col">
+            <h3>Store hours</h3>
+            <dl className="footer-hours">
+              {store.hours.map((row) => (
+                <div key={row.day}>
+                  <dt>{row.day}</dt>
+                  <dd>{row.hours}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
       <div className="container-wide footer-bottom">

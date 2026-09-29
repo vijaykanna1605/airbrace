@@ -1,8 +1,8 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { IconAmazon, IconArrow, IconCheck } from '../components/Icons'
+import { IconAmazon, IconArrow, IconCheck, IconFlipkart } from '../components/Icons'
 import { Seo } from '../components/Seo'
 import { images } from '../assets/images'
-import { formatPrice } from '../data/site'
+import { formatPrice, site } from '../data/site'
 import { getProduct, products } from '../data/products'
 import { useEffect, useState } from 'react'
 
@@ -75,6 +75,9 @@ export function ProductPage() {
             <div className="hero-actions">
               <a className="btn btn--dark" href={product.amazonUrl} target="_blank" rel="noreferrer">
                 <IconAmazon size={16} /> Buy on Amazon
+              </a>
+              <a className="btn btn--flipkart" href={site.flipkartUrl} target="_blank" rel="noreferrer">
+                <IconFlipkart size={16} /> Buy on Flipkart
               </a>
               <Link className="btn btn--outline-dark" to="/compare">
                 Compare models <IconArrow size={16} />

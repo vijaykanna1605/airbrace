@@ -6,7 +6,8 @@ import productBed from './images/product-car-bed.png'
 import techExploded from './images/tech-exploded.png'
 import whyLandscape from './images/why-landscape.png'
 import buyHighway from './images/buy-highway.png'
-import aboutManufacturing from './images/about-manufacturing.png'
+import manufacturingStitching from './images/manufacturing-stitching.jpg'
+import manufacturingCraft from './images/manufacturing-craft.jpg'
 import unitPro from './images/unit-apron-pro.png'
 import unitNeo from './images/unit-apron-neo.png'
 import unitPlus from './images/unit-apron-plus.png'
@@ -22,7 +23,8 @@ export const images = {
   techExploded,
   whyLandscape,
   buyHighway,
-  aboutManufacturing,
+  manufacturingStitching,
+  manufacturingCraft,
   unitPro,
   unitNeo,
   unitPlus,

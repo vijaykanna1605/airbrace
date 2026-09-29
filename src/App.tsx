@@ -5,6 +5,7 @@ import { BusinessPage } from './pages/BusinessPage'
 import { ComparePage } from './pages/ComparePage'
 import { HomePage } from './pages/HomePage'
 import { LegalPage } from './pages/LegalPage'
+import { ManufacturingPage } from './pages/ManufacturingPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { ProductPage } from './pages/ProductPage'
 import { ProductsPage } from './pages/ProductsPage'
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: 'products/:slug', element: <ProductPage /> },
       { path: 'why-airbrace', element: <WhyPage /> },
       { path: 'about', element: <AboutPage /> },
+      { path: 'manufacturing', element: <ManufacturingPage /> },
       { path: 'support', element: <SupportPage /> },
       { path: 'store-locator', element: <StoreLocatorPage /> },
       { path: 'technology', element: <TechnologyPage /> },

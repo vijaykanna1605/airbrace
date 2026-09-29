@@ -104,8 +104,6 @@ export function SupportPage() {
               <p className="muted" style={{ marginTop: 8 }}>
                 {site.address}
                 <br />
-                {site.phoneDisplay}
-                <br />
                 {site.email}
               </p>
               <a className="btn btn--whatsapp" href={whatsappUrl()} target="_blank" rel="noreferrer" style={{ marginTop: 16 }}>

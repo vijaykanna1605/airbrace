@@ -25,23 +25,57 @@ export function IconArrow(props: IconProps) {
   )
 }
 
+function BrandIcon({ size = 18, className, children, ...props }: IconProps) {
+  return (
+    <svg
+      className={className ? `icon-brand ${className}` : 'icon-brand'}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      {...props}
+    >
+      {children}
+    </svg>
+  )
+}
+
 export function IconAmazon(props: IconProps) {
   return (
-    <Svg {...props}>
-      <path d="M6 16c3 2 9 2 13-1" />
-      <path d="M18 16.5c.8.8 1.8 1.3 2.6.2" />
-      <path d="M8 9.5c.4-2 2-3.5 4-3.5 2.4 0 4 1.6 4 3.6 0 3.2-4.2 3-4.2 5.2V15" />
-      <path d="M12.2 16.2v.2" />
-    </Svg>
+    <BrandIcon {...props}>
+      <path
+        d="M4 15.2c2.6 2.4 6 3.6 9.6 3.6 2.8 0 5.4-.8 7.6-2.3"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <path d="M19.4 13.6 22 16.2l-2.9.15" fill="currentColor" />
+    </BrandIcon>
+  )
+}
+
+export function IconFlipkart(props: IconProps) {
+  return (
+    <BrandIcon {...props}>
+      <path
+        fill="#FFE11B"
+        d="M2.4 8.4h19.2L20 21.1a1.3 1.3 0 0 1-1.3 1.2H5.3A1.3 1.3 0 0 1 4 21.1L2.4 8.4Z"
+      />
+      <path fill="#2874F0" d="M8 8.4V6.3a4 4 0 0 1 8 0v2.1h-2.2V6.3a1.8 1.8 0 0 0-3.6 0v2.1H8Z" />
+      <path fill="#2874F0" d="M6.7 11.6h7.1v2H9.3v1.4h3.9v1.9H9.3V19H6.7v-7.4Z" />
+    </BrandIcon>
   )
 }
 
 export function IconWhatsApp(props: IconProps) {
   return (
-    <Svg {...props}>
-      <path d="M5 19l1.6-3.1A8 8 0 1 1 12 20a8.2 8.2 0 0 1-3.4-.7" />
-      <path d="M9.2 9.6c.2-.5.4-.5.7-.5h.6c.2 0 .4 0 .5.4.3.8.7 1.8.8 2 0 .2 0 .4-.2.5l-.4.5c-.2.2-.2.3 0 .6.3.4.8 1 1.3 1.4.4.4.6.3.8.2l.6-.3c.2-.1.4 0 .5.1.4.8.7 1.3.8 1.6.1.3 0 .5-.3.6-.4.2-1 .5-1.6.4-1.5-.2-3.2-1.3-4.4-2.6-1.2-1.3-2-3-2-4.4 0-.6.3-1.2.5-1.5Z" />
-    </Svg>
+    <BrandIcon {...props}>
+      <path
+        fill="currentColor"
+        d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.41a10.1 10.1 0 0 0 4.65 1.14h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2Zm5.76 13.89c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.12.1-1.81-.11-.41-.13-.95-.31-1.64-.61-2.89-1.25-4.77-4.16-4.91-4.35-.14-.19-1.17-1.55-1.17-2.96s.74-2.1 1-2.39c.26-.29.57-.36.76-.36h.55c.17 0 .41-.07.64.49.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.3.38-.42.51-.14.14-.29.29-.12.56.17.27.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"
+      />
+    </BrandIcon>
   )
 }
 
@@ -179,23 +213,6 @@ export function IconInstagram(props: IconProps) {
       <rect x="4" y="4" width="16" height="16" rx="4" />
       <circle cx="12" cy="12" r="3.2" />
       <path d="M16.6 7.4h.01" />
-    </Svg>
-  )
-}
-
-export function IconFacebook(props: IconProps) {
-  return (
-    <Svg {...props}>
-      <path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h2.2l.8-3H13V9a1 1 0 0 1 1-1Z" />
-    </Svg>
-  )
-}
-
-export function IconYoutube(props: IconProps) {
-  return (
-    <Svg {...props}>
-      <rect x="3" y="7" width="18" height="11" rx="3" />
-      <path d="M11 10.5v5l4.5-2.5-4.5-2.5Z" />
     </Svg>
   )
 }

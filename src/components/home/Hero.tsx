@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { images } from '../../assets/images'
 import { site } from '../../data/site'
-import { Airflow } from '../Airflow'
-import { IconAmazon, IconArrow, IconBag, IconPin } from '../Icons'
+import { IconAmazon, IconArrow, IconBag, IconFlipkart, IconPin } from '../Icons'
 
 export function Hero() {
   return (
@@ -11,7 +10,6 @@ export function Hero() {
       <div className="hero-scene" aria-hidden="true">
         <img className="hero-photo" src={images.heroCar} alt="" />
         <div className="hero-photo-mask" />
-        <Airflow />
       </div>
       <div className="hero-copy">
         <motion.p
@@ -48,8 +46,11 @@ export function Hero() {
           <Link className="btn btn--cream" to="/products">
             Explore Products <IconArrow size={16} />
           </Link>
-          <a className="btn btn--ghost" href={site.amazonUrl} target="_blank" rel="noreferrer">
+          <a className="btn btn--ghost" href={site.amazonStore} target="_blank" rel="noreferrer">
             <IconAmazon size={16} /> Buy on Amazon
+          </a>
+          <a className="btn btn--flipkart" href={site.flipkartUrl} target="_blank" rel="noreferrer">
+            <IconFlipkart size={16} /> Buy on Flipkart
           </a>
         </motion.div>
       </div>
@@ -63,9 +64,11 @@ export function Hero() {
               <IconAmazon size={16} /> Amazon
             </span>
             <span>
-              <IconPin size={16} /> Dealers
+              <IconFlipkart size={16} /> Flipkart
             </span>
-            <span>Retail Stores</span>
+            <span>
+              <IconPin size={16} /> Madurai Store
+            </span>
           </div>
         </div>
       </div>

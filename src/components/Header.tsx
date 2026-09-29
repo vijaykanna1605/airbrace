@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { navLinks, site, whatsappUrl } from '../data/site'
-import { IconAmazon, IconWhatsApp } from './Icons'
+import { IconAmazon, IconFlipkart, IconWhatsApp } from './Icons'
 import { Logo } from './Logo'
 
 export function Header() {
@@ -27,6 +27,23 @@ export function Header() {
     }
   }, [open])
 
+  useEffect(() => {
+    if (!open) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    const media = window.matchMedia('(min-width: 1024px)')
+    const onMedia = (event: MediaQueryListEvent) => {
+      if (event.matches) setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    media.addEventListener('change', onMedia)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      media.removeEventListener('change', onMedia)
+    }
+  }, [open])
+
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="container-wide header-inner">
@@ -41,8 +58,11 @@ export function Header() {
           ))}
         </nav>
         <div className="header-cta">
-          <a className="btn btn--amazon" href={site.amazonUrl} target="_blank" rel="noreferrer">
-            <IconAmazon size={16} /> Buy on Amazon
+          <a className="btn btn--amazon" href={site.amazonStore} target="_blank" rel="noreferrer">
+            <IconAmazon size={16} /> Amazon
+          </a>
+          <a className="btn btn--flipkart" href={site.flipkartUrl} target="_blank" rel="noreferrer">
+            <IconFlipkart size={16} /> Flipkart
           </a>
           <a className="btn btn--whatsapp" href={whatsappUrl()} target="_blank" rel="noreferrer">
             <IconWhatsApp size={16} /> WhatsApp
@@ -52,6 +72,7 @@ export function Header() {
           className={`menu-toggle${open ? ' is-open' : ''}`}
           type="button"
           aria-expanded={open}
+          aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((value) => !value)}
         >
@@ -59,14 +80,17 @@ export function Header() {
         </button>
       </div>
       {open ? (
-        <nav className="mobile-nav" aria-label="Mobile">
+        <nav className="mobile-nav" id="mobile-nav" aria-label="Mobile">
           {navLinks.map((link) => (
             <NavLink key={link.to} to={link.to} end={link.to === '/'}>
               {link.label}
             </NavLink>
           ))}
-          <a className="btn btn--cream" href={site.amazonUrl} target="_blank" rel="noreferrer">
+          <a className="btn btn--cream" href={site.amazonStore} target="_blank" rel="noreferrer">
             <IconAmazon size={16} /> Buy on Amazon
+          </a>
+          <a className="btn btn--flipkart" href={site.flipkartUrl} target="_blank" rel="noreferrer">
+            <IconFlipkart size={16} /> Buy on Flipkart
           </a>
           <a className="btn btn--whatsapp" href={whatsappUrl()} target="_blank" rel="noreferrer">
             <IconWhatsApp size={16} /> WhatsApp

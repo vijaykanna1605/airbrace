@@ -1,4 +1,3 @@
-import { Airflow } from './Airflow'
 import type { ProductVisualKind } from '../data/products'
 
 type ProductVisualProps = {
@@ -31,7 +30,6 @@ export function ProductVisual({ kind, fans = 10 }: ProductVisualProps) {
           </div>
         </div>
       </div>
-      <Airflow variant="card" />
     </div>
   )
 }
@@ -44,7 +42,6 @@ export function ExplodedVisual() {
       <div className="explode-layer" />
       <div className="explode-layer" />
       <div className="explode-layer" />
-      <Airflow variant="card" />
     </div>
   )
 }

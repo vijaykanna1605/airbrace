@@ -27,11 +27,12 @@ export function Seo({ title, description, path = '/' }: SeoProps) {
         name: site.legalName,
         url: site.domain,
         email: site.email,
-        telephone: site.phoneTel,
         address: {
           '@type': 'PostalAddress',
+          streetAddress: '1C, Anuppanadi Rd, West Anuppanadi, Anuppanadi',
           addressLocality: 'Madurai',
           addressRegion: 'Tamil Nadu',
+          postalCode: '625009',
           addressCountry: 'IN',
         },
       })
